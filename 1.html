@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>回忆2018</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: lavender;
+    }
+
+   .quote - section {
+      margin - top: 20px;
+      text - align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="all">
+    <h1 id="h1">距离2018年夏天已经过了</h1>
+    <div class="h2">
+      <h2 id="h2"></h2>
+    </div>
+    <div class="quote - section">
+      <p>回忆像一首老歌，在岁月里轻轻吟唱，那些2018年夏天的片段，是心底最柔软的珍藏。</p>
+      <p>时光匆匆，2018年的夏天已远去，但留在记忆里的欢笑与感动，永远熠熠生辉。</p>
+      <p>每一次忆起2018年的夏天，就像翻开一本五彩斑斓的画册，满是青春的模样。</p>
+    </div>
+  </div>
+  <script>
+    var d = new Date();
+    var y_1 = 2018;
+    var m_1 = 6;
+    var d_1 = 21;
+    var year = d.getFullYear();
+    var month = d.getMonth() + 1;
+    var day = d.getDate();
+    var month1, day1, years;
+    years = year - y_1;
+    if (month < m_1) {
+      years--;
+      month1 = 12 + month - m_1;
+    } else if (month === m_1 && day < d_1) {
+      years--;
+      month1 = 12;
+    } else {
+      month1 = month - m_1;
+    }
+    if (day < d_1) {
+      if (month1 === 0) {
+        month1 = 12;
+        years--;
+      }
+      month1--;
+      day1 = 30 + day - d_1;
+    } else {
+      day1 = day - d_1;
+    }
+    var to = years + "年" + month1 + "月" + day1 + "天";
+    document.getElementById("h2").innerText = to;
+  </script>
+</body>
+
+</html>
