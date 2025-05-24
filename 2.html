@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+  	#countdown {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 50px;
+  color: #333;
+}
+  </style>
+  <title>倒计时2026年</title>
+</head>
+
+<body>
+    <h1 id="title"></h1>
+  <div id="countdown">
+    <span id="days"></span>天
+    <span id="hours"></span>小时
+    <span id="minutes"></span>分钟
+    <span id="seconds"></span>秒
+  </div>
+  <a href="https://reoame.github.io/Mypage/">首页</a>
+  <script>
+  var years = 2026;
+  var text = "距离" + years+ "年还有"
+  document.getElementById("title").innerText = text
+ function countdown() {
+  const targetDate = new Date('2026-01-01T00:00:00').getTime();
+  const countdownInterval = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('days').innerHTML = days;
+    document.getElementById('hours').innerHTML = hours;
+    document.getElementById('minutes').innerHTML = minutes;
+    document.getElementById('seconds').innerHTML = seconds;
+
+    if (distance < 0) {
+      clearInterval(countdownInterval);
+      document.getElementById('countdown').innerHTML = '已到达2026年！';
+    }
+  }, 1000);
+}
+
+window.onload = countdown;
+</script>
+</body>
+
+</html>
