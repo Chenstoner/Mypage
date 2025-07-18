@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python运算符速查表</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+            color: #2c3e50;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3, h4, h5, h6 { 
+            color: #2c3e50; 
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 { border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { border-bottom: 1px solid #3498db; padding-bottom: 8px; }
+        p { margin: 0 0 1em; }
+        a { color: #3498db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { 
+            background-color: #f0f4f8; 
+            padding: 2px 6px; 
+            border-radius: 4px; 
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+        pre { 
+            background-color: #f0f4f8; 
+            padding: 15px; 
+            border-radius: 6px; 
+            overflow: auto;
+            line-height: 1.4;
+            border-left: 4px solid #3498db;
+        }
+        pre code { background-color: transparent; padding: 0; }
+        blockquote { 
+            border-left: 4px solid #3498db; 
+            padding-left: 15px; 
+            color: #555; 
+            margin-left: 0;
+            background-color: #f9f9f9;
+        }
+        img { max-width: 100%; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        hr { border: 0; height: 1px; background: linear-gradient(to right, transparent, #3498db, transparent); margin: 2em 0; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 1em; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #3498db; color: white; }
+        tr:nth-child(even) { background-color: #f2f9ff; }
+    </style>
+</head>
+<body>
+<table>
+<thead>
+<tr>
+  <th style="text-align:left;">运算符类型</th>
+  <th style="text-align:left;">运算符符号</th>
+  <th style="text-align:left;">大白话名字</th>
+  <th style="text-align:left;">作用（大白话解释）</th>
+  <th style="text-align:left;">简单例子</th>
+  <th style="text-align:left;">结果</th>
+  <th style="text-align:left;">重点提醒</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:left;"><strong>算术运算符</strong><br>(管算数的)</td>
+  <td style="text-align:left;"><code>+</code></td>
+  <td style="text-align:left;"><strong>加号</strong></td>
+  <td style="text-align:left;">把两个东西加起来</td>
+  <td style="text-align:left;"><code>5 + 3</code></td>
+  <td style="text-align:left;"><code>8</code></td>
+  <td style="text-align:left;">数字能加，文字也能“拼起来”（<code>"你好" + "世界"</code> = <code>"你好世界"</code>）</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>-</code></td>
+  <td style="text-align:left;"><strong>减号</strong></td>
+  <td style="text-align:left;">从前一个数里减掉后一个数</td>
+  <td style="text-align:left;"><code>10 - 4</code></td>
+  <td style="text-align:left;"><code>6</code></td>
+  <td style="text-align:left;"></td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>*</code></td>
+  <td style="text-align:left;"><strong>乘号</strong></td>
+  <td style="text-align:left;">把两个数相乘</td>
+  <td style="text-align:left;"><code>3 * 4</code></td>
+  <td style="text-align:left;"><code>12</code></td>
+  <td style="text-align:left;">数字能乘，文字也能“复制N份”（<code>"Hi" * 3</code> = <code>"HiHiHi"</code>）</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>/</code></td>
+  <td style="text-align:left;"><strong>除号</strong></td>
+  <td style="text-align:left;">把前一个数除以后一个数（<strong>结果经常带小数！</strong>）</td>
+  <td style="text-align:left;"><code>10 / 3</code></td>
+  <td style="text-align:left;"><code>3.333...</code></td>
+  <td style="text-align:left;">除数不能为0</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>%</code></td>
+  <td style="text-align:left;"><strong>取余数</strong></td>
+  <td style="text-align:left;">算除法后 <strong>剩下的零头</strong></td>
+  <td style="text-align:left;"><code>10 % 3</code></td>
+  <td style="text-align:left;"><code>1</code></td>
+  <td style="text-align:left;">比如 <code>10</code> 除以 <code>3</code>，商是 <code>3</code>，<strong>余数 <code>1</code></strong></td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>**</code></td>
+  <td style="text-align:left;"><strong>乘方/次方</strong></td>
+  <td style="text-align:left;">算一个数的 N 次方（自己乘自己 N 次）</td>
+  <td style="text-align:left;"><code>2 ** 3</code></td>
+  <td style="text-align:left;"><code>8</code></td>
+  <td style="text-align:left;"><code>2 * 2 * 2 = 8</code></td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>//</code></td>
+  <td style="text-align:left;"><strong>取整除</strong></td>
+  <td style="text-align:left;">算除法后 <strong>只要整数商</strong>，小数部分直接扔掉</td>
+  <td style="text-align:left;"><code>10 // 3</code></td>
+  <td style="text-align:left;"><code>3</code></td>
+  <td style="text-align:left;">不管余数多少，<strong>整盒先拿走！</strong></td>
+</tr>
+<tr>
+  <td style="text-align:left;"><strong>比较运算符</strong><br>(管比大小的)</td>
+  <td style="text-align:left;"><code>==</code></td>
+  <td style="text-align:left;"><strong>等于吗？</strong></td>
+  <td style="text-align:left;">检查两边 <strong>是不是一样</strong></td>
+  <td style="text-align:left;"><code>5 == 5</code><br><code>5 == "5"</code></td>
+  <td style="text-align:left;"><code>True</code><br><code>False</code></td>
+  <td style="text-align:left;"><strong>类型不同就不相等！</strong> <code>5</code>（数字）和 <code>"5"</code>（文字）是两码事！</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>!=</code></td>
+  <td style="text-align:left;"><strong>不等于吗？</strong></td>
+  <td style="text-align:left;">检查两边 <strong>是不是不一样</strong></td>
+  <td style="text-align:left;"><code>5 != 3</code></td>
+  <td style="text-align:left;"><code>True</code></td>
+  <td style="text-align:left;"></td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>&gt;</code></td>
+  <td style="text-align:left;"><strong>大于吗？</strong></td>
+  <td style="text-align:left;">检查左边 <strong>是不是比右边大</strong></td>
+  <td style="text-align:left;"><code>6 &gt; 3</code></td>
+  <td style="text-align:left;"><code>True</code></td>
+  <td style="text-align:left;"></td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>&lt;</code></td>
+  <td style="text-align:left;"><strong>小于吗？</strong></td>
+  <td style="text-align:left;">检查左边 <strong>是不是比右边小</strong></td>
+  <td style="text-align:left;"><code>2 &lt; 4</code></td>
+  <td style="text-align:left;"><code>True</code></td>
+  <td style="text-align:left;"></td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>&gt;=</code></td>
+  <td style="text-align:left;"><strong>大于等于吗？</strong></td>
+  <td style="text-align:left;">检查左边 <strong>是不是大于或等于</strong> 右边</td>
+  <td style="text-align:left;"><code>5 &gt;= 5</code><br><code>5 &gt;= 3</code></td>
+  <td style="text-align:left;"><code>True</code><br><code>True</code></td>
+  <td style="text-align:left;">包含“等于”的情况</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>&lt;=</code></td>
+  <td style="text-align:left;"><strong>小于等于吗？</strong></td>
+  <td style="text-align:left;">检查左边 <strong>是不是小于或等于</strong> 右边</td>
+  <td style="text-align:left;"><code>4 &lt;= 4</code><br><code>3 &lt;= 5</code></td>
+  <td style="text-align:left;"><code>True</code><br><code>True</code></td>
+  <td style="text-align:left;"></td>
+</tr>
+<tr>
+  <td style="text-align:left;"><strong>逻辑运算符</strong><br>(管讲条件的)</td>
+  <td style="text-align:left;"><code>and</code></td>
+  <td style="text-align:left;"><strong>并且</strong></td>
+  <td style="text-align:left;">两边的条件 <strong>必须都成立</strong>，结果才成立</td>
+  <td style="text-align:left;"><code>(5 &gt; 3) and (2 &lt; 4)</code></td>
+  <td style="text-align:left;"><code>True</code></td>
+  <td style="text-align:left;">像领优惠券：<strong>必须</strong>是会员 <strong>并且</strong> 消费满100！</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>or</code></td>
+  <td style="text-align:left;"><strong>或者</strong></td>
+  <td style="text-align:left;">两边的条件 <strong>只要有一个成立</strong>，结果就成立</td>
+  <td style="text-align:left;"><code>(5 &gt; 3) or (1 &gt; 2)</code></td>
+  <td style="text-align:left;"><code>True</code></td>
+  <td style="text-align:left;">像免费进公园：<strong>要么</strong>是老人 <strong>或者</strong> 是小孩！</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>not</code></td>
+  <td style="text-align:left;"><strong>不是/取反</strong></td>
+  <td style="text-align:left;"><strong>把后面的条件结果反过来</strong>（真变假，假变真）</td>
+  <td style="text-align:left;"><code>not (5 &gt; 10)</code></td>
+  <td style="text-align:left;"><code>True</code></td>
+  <td style="text-align:left;"><code>5&gt;10</code> 是 <code>False</code>，<code>not False</code> 就是 <code>True</code>。说“这瓜 <strong>不</strong> 熟？”</td>
+</tr>
+<tr>
+  <td style="text-align:left;"><strong>赋值运算符</strong><br>(管记数的)</td>
+  <td style="text-align:left;"><code>=</code></td>
+  <td style="text-align:left;"><strong>基本赋值</strong></td>
+  <td style="text-align:left;"><strong>把右边的值，存到左边的变量里</strong>（像贴标签）</td>
+  <td style="text-align:left;"><code>money = 1000</code></td>
+  <td style="text-align:left;">money 变成 1000</td>
+  <td style="text-align:left;"><strong>最最常用！</strong> <code>=</code> 是记账，<strong>不是</strong>比较！</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>+=</code></td>
+  <td style="text-align:left;"><strong>加后赋值</strong></td>
+  <td style="text-align:left;">把变量 <strong>加上</strong> 右边的值，再把结果存回变量（快捷记账：<code>a = a + b</code> → <code>a += b</code>）</td>
+  <td style="text-align:left;"><code>money = 1000</code><br><code>money += 500</code></td>
+  <td style="text-align:left;">money 变成 1500</td>
+  <td style="text-align:left;">“今天 <strong>挣了</strong> 500，加到存款里！”</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>-=</code></td>
+  <td style="text-align:left;"><strong>减后赋值</strong></td>
+  <td style="text-align:left;">把变量 <strong>减去</strong> 右边的值，再把结果存回变量</td>
+  <td style="text-align:left;"><code>money = 1500</code><br><code>money -= 200</code></td>
+  <td style="text-align:left;">money 变成 1300</td>
+  <td style="text-align:left;">“买菜 <strong>花了</strong> 200，从存款扣掉！”</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>*=</code></td>
+  <td style="text-align:left;"><strong>乘后赋值</strong></td>
+  <td style="text-align:left;">把变量 <strong>乘以</strong> 右边的值，再把结果存回变量</td>
+  <td style="text-align:left;"><code>count = 2</code><br><code>count *= 3</code></td>
+  <td style="text-align:left;">count 变成 6</td>
+  <td style="text-align:left;">“股票 <strong>翻倍了</strong>！” (<code>count = count * 3</code>)</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>/=</code></td>
+  <td style="text-align:left;"><strong>除后赋值</strong></td>
+  <td style="text-align:left;">把变量 <strong>除以</strong> 右边的值，再把结果存回变量（<strong>结果可能是小数！</strong>）</td>
+  <td style="text-align:left;"><code>total = 10</code><br><code>total /= 2</code></td>
+  <td style="text-align:left;">total 变成 5.0</td>
+  <td style="text-align:left;">“零钱 <strong>分一半</strong> 给老婆！” (<code>total = total / 2</code>)</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>%=</code></td>
+  <td style="text-align:left;"><strong>取余后赋值</strong></td>
+  <td style="text-align:left;">把变量 <strong>除以右边值取余数</strong>，再把余数存回变量</td>
+  <td style="text-align:left;"><code>eggs = 10</code><br><code>eggs %= 3</code></td>
+  <td style="text-align:left;">eggs 变成 1</td>
+  <td style="text-align:left;">“10个蛋装盒（3个/盒），<strong>剩下的散蛋</strong>还有几个？” (<code>eggs = eggs % 3</code>)</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>//=</code></td>
+  <td style="text-align:left;"><strong>取整除后赋值</strong></td>
+  <td style="text-align:left;">把变量 <strong>除以右边值取整数商</strong>，再把商存回变量（扔掉小数）</td>
+  <td style="text-align:left;"><code>apples = 10</code><br><code>apples //= 3</code></td>
+  <td style="text-align:left;">apples 变成 3</td>
+  <td style="text-align:left;">“10个苹果装盒（3个/盒），<strong>能装几整盒</strong>？” (<code>apples = apples // 3</code>)</td>
+</tr>
+<tr>
+  <td style="text-align:left;"></td>
+  <td style="text-align:left;"><code>**=</code></td>
+  <td style="text-align:left;"><strong>次方后赋值</strong></td>
+  <td style="text-align:left;">把变量 <strong>做右边值的次方</strong>，再把结果存回变量</td>
+  <td style="text-align:left;"><code>num = 2</code><br><code>num **= 3</code></td>
+  <td style="text-align:left;">num 变成 8</td>
+  <td style="text-align:left;">“2的3次方是多少？” (<code>num = num ** 3</code>)</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+</body>
+</html>
